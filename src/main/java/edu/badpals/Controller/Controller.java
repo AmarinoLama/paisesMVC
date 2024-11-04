@@ -43,7 +43,7 @@ public class Controller {
     }
 
     private void editarPais(){
-        conexion.modificarPais(inputs.pedirNombrePais(),inputs.pedirUnPais());
+        conexion.modificarPais(inputs.pedirNombrePais(),inputs.pedirHabitantes(), inputs.pedirCapital(), inputs.pedirMoneda());
     }
 
     private void insertarPais() {

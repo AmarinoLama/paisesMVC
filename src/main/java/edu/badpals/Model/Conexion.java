@@ -58,16 +58,16 @@ public class Conexion {
 
     }
 
-    public boolean modificarPais(String nombre, Pais pais) {
+    public boolean modificarPais(String nombrePais, int habitantes, String capital, String moneda) {
         String sql = "UPDATE paises SET nombre_pais = ?, habitantes = ?, capital = ?, moneda = ? WHERE nombre_pais = ?";
         try {
             Connection conexion = connectDatabase();
             PreparedStatement statement = conexion.prepareStatement(sql);
-            statement.setString(1, pais.getNombre_pais());
-            statement.setInt(2, pais.getNumero_habitantes());
-            statement.setString(3, pais.getNombre_capital());
-            statement.setString(4, pais.getNombre_moneda());
-            statement.setString(5, nombre);
+            statement.setString(1, nombrePais);
+            statement.setInt(2, habitantes);
+            statement.setString(3, capital);
+            statement.setString(4, moneda);
+            statement.setString(5, nombrePais);
             int rowsUpdated = statement.executeUpdate();
             conexion.close();
             return rowsUpdated > 0;

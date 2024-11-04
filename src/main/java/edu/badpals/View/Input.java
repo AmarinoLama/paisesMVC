@@ -27,6 +27,27 @@ public class Input {
         return sc.nextLine();
     }
 
+    public String pedirCapital() {
+        Output.pedircapital();
+        return sc.nextLine();
+    }
+
+    public String pedirMoneda() {
+        Output.pedirMoneda();
+        return sc.nextLine();
+    }
+
+    public int pedirHabitantes() {
+        while (true) {
+            Output.pedirHabitantes();
+            String scRes = sc.nextLine();
+            if (scRes.matches("\\d+")){
+                return Integer.parseInt(scRes);
+            }
+            Output.errorHabitantes();
+        }
+    }
+
     public Pais insertarPais() {
         return pedirUnPais();
     }
