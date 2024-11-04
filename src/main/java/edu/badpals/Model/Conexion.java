@@ -13,8 +13,7 @@ public class Conexion {
             String url = "jdbc:mysql://localhost:3306/mundo";
             return DriverManager.getConnection(url, "root", "root");
         } catch (SQLException e) {
-            System.out.println("Error al conectar a la base de datos:");
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             return null;
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
